@@ -10,32 +10,115 @@ library(dplyr)
 library(knitr)
 ```
 
+# Source data
 
-# EP by vulnerabilty index
-
-```{r vuln}
+```{r source-data}
 emergency  <- c( 2189, 2714, 3306, 4082 )
 patients <- c( 12445, 14680, 16429, 18579 )
-prop.trend.test(emergency, patients)
-```
 
-```{r race}
 race <- data.frame(
   factor_levels = c('black', 'hawaii', 'indian-alaska', 'white', 'other', 'asian', 'none', 'hispanic'),
   numerator = c(1796, 33, 76, 10177, 418, 161, 87, NA),
   denominator = c(7371, 139, 341, 52371, 2305, 1134, 1320, NA)
 )
 
-prop.test(race$numerator, race$denominator)
+race_dropna <- race %>%
+  filter(!is.na(numerator) & !is.na(denominator))
+
+sex <- data.frame(
+  factor_levels = c('male', 'female'),
+  numerator = c(6148, 6221),
+  denominator = c(30525, 32542)
+)
+
+age <- data.frame(
+  factor_levels = c('<69', '69-77.9', '78+'),
+  numerator = c(4991, 3818, 3561),
+  denominator = c(21753, 20537, 20779)
+)
+
+per_cap_income_zip <- data.frame(
+  factor_levels = c('<23', '23-26.9', '27-30.9', '31-39.9', '40+'),
+  numerator = c(2508, 2558, 2688, 2930, 1570),
+  denominator = c(11380, 12009, 12625, 15491, 10664)
+)
+
 ```
+
+
+# Hypotheses tests by factor
+
+```{r}
+rows2fisher <- function(positives, totals) {
+  negatives = totals - positives
+  rows = length(positives)
+  M = matrix(c(positives, negatives), nrow = rows)
+  return(fisher.test(M, simulate.p.value = TRUE))
+}
+```
+
+
+## Vulnerabilty index
+
+This is the only one where I chose to do trend test.
+
+```{r vuln}
+prop.trend.test(emergency, patients)
+rows2fisher(emergency, patients)
+```
+
+## Race
+```{r}
+prop.test(race$numerator, race$denominator)
+rows2fisher(race_dropna$numerator, race_dropna$denominator)
+```
+
+## Sex
+```{r}
+prop.test(sex$numerator, sex$denominator)
+rows2fisher(sex$numerator, sex$denominator)
+```
+
+## Age
+```{r}
+prop.test(age$numerator, age$denominator)
+rows2fisher(age$numerator, age$denominator)
+```
+
+## Income
+
+Note it is specifically *estimated per-capita income,*  and this is on the ZIP code level. Meaning everyone in the same ZIP will have the same income assigned.
+
+```{r}
+prop.test(per_cap_income_zip$numerator, per_cap_income_zip$denominator)
+rows2fisher(per_cap_income_zip$numerator, per_cap_income_zip$denominator)
+```
+
+
+
+
+# Re-create table 1
 
 Table 1 in the VA paper goes as follows: white, black, (hispanic), asian, pacific, ai/an, other+unknown.
 
-```{r t1race}
+```{r table1}
 paper_order <- c('white', 'black', 'hispanic', 'asian', 'hawaii', 'indian-alaska', 'other', 'none')
 row_nums_in_order <- match(paper_order, race$factor_levels)
-race[row_nums_in_order, ] %>%
-  mutate(percent = round(100 * numerator / denominator, 2)) %>%
-  kable()
+
+race[row_nums_in_order, ] %>% mutate(percent = round(100 * numerator / denominator, 2)) %>% kable()
+
+sex %>% mutate(percent = round(100 * numerator / denominator, 2)) %>% kable()
+
+age %>% mutate(percent = round(100 * numerator / denominator, 2)) %>% kable()
+```
+
+Sanity check:
+
+```{r sanity}
+sum(race$denominator, na.rm = TRUE)
+sum(age$denominator)
+sum(sex$denominator)
+
+63000 / 5
 ```
 
