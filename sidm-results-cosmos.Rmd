@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 output: pdf_document
 ---
 
-```{r libs}
+```{r libs, include=FALSE}
 library(dplyr)
 library(knitr)
 ```
@@ -17,7 +17,9 @@ emergency  <- c( 2189, 2714, 3306, 4082 )
 patients <- c( 12445, 14680, 16429, 18579 )
 
 race <- data.frame(
-  factor_levels = c('black', 'hawaii', 'indian-alaska', 'white', 'other', 'asian', 'none', 'hispanic'),
+  factor_levels = c(
+    'black', 'hawaii', 'indian-alaska', 'white', 'other', 'asian', 'none', 'hispanic'
+  ),
   numerator = c(1796, 33, 76, 10177, 418, 161, 87, NA),
   denominator = c(7371, 139, 341, 52371, 2305, 1134, 1320, NA)
 )
@@ -48,7 +50,7 @@ per_cap_income_zip <- data.frame(
 
 # Hypotheses tests by factor
 
-```{r}
+```{r function-def, include=FALSE}
 rows2fisher <- function(positives, totals) {
   negatives = totals - positives
   rows = length(positives)
@@ -102,23 +104,35 @@ rows2fisher(per_cap_income_zip$numerator, per_cap_income_zip$denominator)
 Table 1 in the VA paper goes as follows: white, black, (hispanic), asian, pacific, ai/an, other+unknown.
 
 ```{r table1}
-paper_order <- c('white', 'black', 'hispanic', 'asian', 'hawaii', 'indian-alaska', 'other', 'none')
+paper_order <- c(
+  'white', 'black', 'hispanic', 'asian', 'hawaii', 'indian-alaska', 'other', 'none'
+)
 row_nums_in_order <- match(paper_order, race$factor_levels)
 
-race[row_nums_in_order, ] %>% mutate(percent = round(100 * numerator / denominator, 2)) %>% kable()
+race[row_nums_in_order, ] %>%
+  mutate(percent = round(100 * numerator / denominator, 2)) %>%
+  kable()
 
 sex %>% mutate(percent = round(100 * numerator / denominator, 2)) %>% kable()
 
 age %>% mutate(percent = round(100 * numerator / denominator, 2)) %>% kable()
 ```
 
-Sanity check:
+
+
+
+# Sanity checks
+
+About total counts, which might not equal each other, but which should be close:
 
 ```{r sanity}
 sum(race$denominator, na.rm = TRUE)
 sum(age$denominator)
 sum(sex$denominator)
-
-63000 / 5
 ```
 
+How many to aim for in a quintile of income:
+
+```{r sanity2}
+round(sum(age$denominator) / 5)
+```
