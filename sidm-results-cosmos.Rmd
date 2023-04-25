@@ -5,11 +5,37 @@ date: "`r Sys.Date()`"
 output: pdf_document
 ---
 
+```{r libs}
+library(dplyr)
+library(knitr)
+```
+
+
 # EP by vulnerabilty index
 
 ```{r vuln}
 emergency  <- c( 2189, 2714, 3306, 4082 )
 patients <- c( 12445, 14680, 16429, 18579 )
 prop.trend.test(emergency, patients)
+```
+
+```{r race}
+race <- data.frame(
+  factor_levels = c('black', 'hawaii', 'indian-alaska', 'white', 'other', 'asian', 'none', 'hispanic'),
+  numerator = c(1796, 33, 76, 10177, 418, 161, 87, NA),
+  denominator = c(7371, 139, 341, 52371, 2305, 1134, 1320, NA)
+)
+
+prop.test(race$numerator, race$denominator)
+```
+
+Table 1 in the VA paper goes as follows: white, black, (hispanic), asian, pacific, ai/an, other+unknown.
+
+```{r t1race}
+paper_order <- c('white', 'black', 'hispanic', 'asian', 'hawaii', 'indian-alaska', 'other', 'none')
+row_nums_in_order <- match(paper_order, race$factor_levels)
+race[row_nums_in_order, ] %>%
+  mutate(percent = round(100 * numerator / denominator, 2)) %>%
+  kable()
 ```
 
