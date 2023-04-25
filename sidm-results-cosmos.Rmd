@@ -3,7 +3,6 @@ title: "Lung emergency presentation in Cosmos"
 author: "Andrew Zimolzak"
 date: "`r Sys.Date()`"
 output:
-  word_document: default
   pdf_document: default
 ---
 
@@ -46,6 +45,15 @@ per_cap_income_zip <- data.frame(
   numerator = c(2508, 2558, 2688, 2930, 1570),
   denominator = c(11380, 12009, 12625, 15491, 10664)
 )
+
+transport_survey <- data.frame(
+  factor_levels = c('yes', 'no', 'unknown'),
+  numerator = c(53, 405, 11895),
+  denominator = c(122, 1462, 61447)
+)
+
+transport_dropna <- transport_survey %>%
+  filter(factor_levels != 'unknown')
 
 ```
 
@@ -96,6 +104,24 @@ Note it is specifically *estimated per-capita income,*  and this is on the ZIP c
 ```{r}
 prop.test(per_cap_income_zip$numerator, per_cap_income_zip$denominator)
 rows2fisher(per_cap_income_zip$numerator, per_cap_income_zip$denominator)
+```
+
+## Medical transport problems
+
+Acquired from survey data, directly from patients. Not imputed.
+
+### Whole table
+
+```{r}
+prop.test(transport_survey$numerator, transport_survey$denominator)
+rows2fisher(transport_survey$numerator, transport_survey$denominator)
+```
+
+### Completed surveys only
+
+```{r}
+prop.test(transport_dropna$numerator, transport_dropna$denominator)
+rows2fisher(transport_dropna$numerator, transport_dropna$denominator)
 ```
 
 
