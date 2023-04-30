@@ -8,22 +8,20 @@ characters). Title 100 characters max. Optional: one figure or table
 
 # Abstract
 
-Background: Electronic clinical quality measures (eCQMs) are
-increasingly used. We previously developed one for cancer emergency
+Background: Missed and delayed cancer diagnoses are common, harmful,
+and often preventable. The Centers for Medicare and Medicaid Services
+have emphasized digital quality measures (dQMs) that evaluate
+longitudinal electronic health record data across multiple settings of
+care to address measurement gaps in quality. Therefore, dQMs of cancer
+diagnosis quality are necessary to identify gaps and guide
+interventions. We previously developed one for cancer emergency
 presentation. This is a unique measure because it focuses on diagnosis
-specifically.
+specifically. We developed and validated it in two health systems but
+aimed to demonstrate its usability and value in other large US data
+sources.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-gravida pellentesque arcu, sit amet sodales enim. Vivamus semper,
-sapien ut mattis cursus, lorem orci hendrerit velit, a accumsan ante
-lectus in augue. Nulla sed neque ex. In leo nisl, laoreet eu porta
-vitae, dapibus sodales tellus. Aliquam ultricies commodo sem
-vestibulum commodo. Etiam gravida massa eu auctor facilisis. Aliquam
-scelerisque viverra diam ac volutpat. Cras non consectetur tellus.
-Vivamus tempor nec.
-
-Methods: We implemented an eCQM in Cosmos, a deidentified database
-covering $x$ million individuals. The interface is point and click
+Methods: We implemented an dQM in Cosmos, a deidentified database
+covering x million individuals. The interface is point and click
 instead of SQL, which required using the original source document
 English language description, a previously published approach that has
 worked. We measured the crude measure nationwide in those with new
@@ -33,22 +31,22 @@ days. We examined associations with social determinants of health both
 from survey and census ZIP code level data. We examined previous
 associations with demographic factors.
 
-Results: At national scale, the eCQM for lung EP was 19.5% (out of
+Results: At national scale, the dQM for lung EP was 19.5% (out of
 58,274 cancer diagnoses). This is similar to prior values (19% VA and
 18% Geisinger). Survey data showed an association of EP with
 transportation to medical appointments (43% vs. 28%). There was a
 stepwise association of more EP with each increasing category of
-social vulnerability (18% at lowest category vs. 22% at highest).
+social vulnerability (18% at lowest category vs. 22% at highest,
+p<0.001). Income showed a stepwise decrease in EP with increasing ZIP
+per capita income (p < 0.001). Demographics showed 19% EP in white
+patients and 24% in black (the two most common categories). Age < 69
+had higher EP (23%) compared to 78 and above (17%, p<0.001).
 
-Income showed etc etc
-
-Demographics showed etc etc
-
-Conclusions: We successfully implemented an eCQM using a different
+Conclusions: We successfully implemented an dQM using a different
 platform for US medical record data. We validated previous demographic
-associations shown in separate datasets. We showed associations with social
-determinants data that were not available elsewhere and can be further
-investigated. Limitations include the inability to conclusively
-re-validate this measure due to deidentified data and no access to
-text notes, although this could be done at any single institution that
-wanted to implement the measure.
+associations shown in separate datasets. We showed associations with
+social determinants data that were not available elsewhere and can be
+further investigated. Limitations include the inability to
+conclusively re-validate this measure due to deidentified data and no
+access to text notes, although this could be done at any single
+institution that wanted to implement the measure.
