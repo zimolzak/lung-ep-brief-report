@@ -9,7 +9,9 @@ characters). Title 100 characters max. Optional: one figure or table
 # Abstract
 
 Background: Electronic clinical quality measures (eCQMs) are
-increasingly
+increasingly used. We previously developed one for cancer emergency
+presentation. This is a unique measure because it focuses on diagnosis
+specifically.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
 gravida pellentesque arcu, sit amet sodales enim. Vivamus semper,
@@ -18,45 +20,35 @@ lectus in augue. Nulla sed neque ex. In leo nisl, laoreet eu porta
 vitae, dapibus sodales tellus. Aliquam ultricies commodo sem
 vestibulum commodo. Etiam gravida massa eu auctor facilisis. Aliquam
 scelerisque viverra diam ac volutpat. Cras non consectetur tellus.
-Vivamus tempor nec dui eget tincidunt. Vestibulum blandit cursus urna,
-eu tincidunt ipsum luctus vitae.
+Vivamus tempor nec.
 
 Methods: We implemented an eCQM in Cosmos, a deidentified database
 covering $x$ million individuals. The interface is point and click
 instead of SQL, which required using the original source document
 English language description, a previously published approach that has
-worked. We measured the crude measure nationwide in calendar year $x$.
-We examined associations with social determinants of health both from
-survey and census ZIP code level data. We examined previous
+worked. We measured the crude measure nationwide in those with new
+lung cancer diagnosis in calendar year 2019. Emergency presentation
+was defined as ER visit followed by the new cancer diagnosis within 30
+days. We examined associations with social determinants of health both
+from survey and census ZIP code level data. We examined previous
 associations with demographic factors.
 
-Pharetra dolor. Aliquam eget lacus magna. Donec maximus ipsum quis
-nisi fringilla viverra quis sit amet lectus. Vivamus tempor accumsan
-urna ut congue. Praesent mattis lobortis leo, at ultricies.
+Results: At national scale, the eCQM for lung EP was 19.5% (out of
+58,274 cancer diagnoses). This is similar to prior values (19% VA and
+18% Geisinger). Survey data showed an association of EP with
+transportation to medical appointments (43% vs. 28%). There was a
+stepwise association of more EP with each increasing category of
+social vulnerability (18% at lowest category vs. 22% at highest).
 
-Results: At national scale, the eCQM for lung EP was 19.5%. This is
-similar to prior values (19% VA and 18% Geisinger). Survey data showed
-an association of EP with transportation to medical appointments (43%
-vs. 28%). There was a stepwise association of more EP with each
-increasing category of social vulnerability (18% at lowest category
-vs. 22% at highest).
+Income showed etc etc
 
-Arcu finibus sit amet. Nunc pretium tempor velit. Fusce suscipit
-posuere rhoncus. Etiam pulvinar sollicitudin mi, vitae convallis felis
-fringilla id. Ut in tincidunt purus. Praesent condimentum sed augue
-quis scelerisque. Etiam volutpat aliquet placerat. Sed vulputate
-ultrices risus sit amet congue. Ut odio nisl, tincidunt ac blandit in.
+Demographics showed etc etc
 
 Conclusions: We successfully implemented an eCQM using a different
 platform for US medical record data. We validated previous demographic
-associations in separate datasets. We showed associations with social
+associations shown in separate datasets. We showed associations with social
 determinants data that were not available elsewhere and can be further
-investigated.
-
-Mattis at turpis. Donec iaculis dapibus dignissim. Nullam hendrerit
-justo malesuada, iaculis ipsum id, gravida risus. Praesent tristique
-velit ac arcu aliquet feugiat. Donec vel sapien id ligula porttitor
-scelerisque. Aliquam rhoncus augue quis ex eleifend tincidunt. Aliquam
-ultricies dui nisl, vitae fermentum lorem venenatis a. Proin iaculis
-risus augue, in egestas velit tempor vitae. Sed a lectus rutrum tortor
-interdum aliquam nec.
+investigated. Limitations include the inability to conclusively
+re-validate this measure due to deidentified data and no access to
+text notes, although this could be done at any single institution that
+wanted to implement the measure.
