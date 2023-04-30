@@ -1,8 +1,6 @@
-% Machine Learning for Enhanced Electronic Trigger Detection of Diagnostic Errors
+% Translating an Electronic Clincal Quality Measure for Cancer Diagnosis Quality to a Novel Data Source
 
-Andrew J. Zimolzak, Max Yu, Angela Wu, Li Wei, Usman Mir, Ashish
-Gupta, Viral Vaghani, Adel Hassan, Justin Mower, Devika Subramanian,
-Hardeep Singh
+Andrew J. Zimolzak, Jessica Davila, Hardeep Singh
 
 Due May 2. SIDM scientific abstracts are 400 words (really 2800
 characters). Title 100 characters max. Optional: one figure or table
@@ -41,19 +39,12 @@ regression and random forests. ML had access to demographics, lab
 values, vital signs, medications, test orders, and encounter
 diagnoses.
 
-Results: For the dizziness e-trigger, 38 records were true positive
-MOD, of 82 flagged (46% positive predictive value [PPV]). The
-best-performing ML algorithm correctly identified 37 of the 38 true
-positives and 43 of 44 true negatives (97% PPV). For the abdominal
-pain e-trigger, 31 records were true positive MOD, of 104 flagged (30%
-PPV). ML correctly identified 26 of 31 true positives and 71
-of 73 true negatives (93% PPV).
+Results: At national scale, the eCQM for lung EP was 19.5%. This is
+similar to prior values (19% VA and 18% Geisinger). Survey data showed
+an association of EP with transportation to medical appointments (43%
+vs. 28%). There was a stepwise association of more EP with each
+increasing category of social vulnerability (18% at lowest category
+vs. 22% at highest).
 
-Conclusions: We successfully applied machine learning to enhance the
-accuracy of electronic triggers to find missed opportunities for
-diagnosis, using structured data only. This approach improved
-predictive value and missed few cases of true MOD. Limitations include
-time needed to prepare variables used by ML, although once this is
-done, the algorithm can run at large scale. Next steps include
-applying our two-stage approach to other rules-based e-triggers for
-diagnostic error.
+Conclusions: We successfully implemented an eCQM using a different
+platform for US medical record data. We 
