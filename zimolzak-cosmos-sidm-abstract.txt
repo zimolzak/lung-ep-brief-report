@@ -21,7 +21,7 @@ demonstrate its viability and utility in an independent large US data
 source.
 
 Methods: We implemented the cancer EP in Cosmos, a deidentified
-database covering ________ million individuals. Emergency presentation was
+database covering 184 million individuals. Emergency presentation was
 defined as ER visit followed by the new cancer diagnosis within 30
 days. The interface is point and click instead of SQL, which required
 using the original source document English language description, a
@@ -35,12 +35,13 @@ Results: At national scale, the dQM for lung EP was 19.5% (out of
 58,274 cancer diagnoses). This is similar to prior values (19% VA and
 18% Geisinger). Demographics showed 19% EP in white patients and 24%
 in black (the two most common categories). Age < 69 had higher EP
-(23%) compared to 78 and above (17%, p<0.001). There was a stepwise
-association of more EP with each increasing category of social
-vulnerability (18% at lowest category vs. 22% at highest, p<0.001).
-Income showed a stepwise decrease in EP with increasing ZIP per capita
-income (p < 0.001). Survey data showed an association of EP with
-transportation to medical appointments (43% vs. 28%).
+(23%) compared to 78 and above (17%, p<0.001). There was a positive,
+stepwise association of EP with increasing category of social
+vulnerability (18% at lowest category vs. 22% at highest, p<0.001) and
+negative association of EP with ZIP per capita income (p < 0.001).
+Survey data showed an association of EP with self-reported access to
+transportation to medical appointments (43% EP among those with
+difficulties vs. 28% among those without).
 
 Conclusions: We successfully implemented a dQM using a different
 platform for US medical record data. We validated previous demographic
