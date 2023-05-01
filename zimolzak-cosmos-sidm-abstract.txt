@@ -1,4 +1,4 @@
-% Translating an Electronic Clincal Quality Measure for Cancer Diagnosis Quality to a Novel Data Source
+% Translating a Digital Quality Measure for Cancer Diagnosis Quality to a Novel Data Source
 
 Andrew J. Zimolzak, Jessica Davila, Hardeep Singh
 
@@ -12,41 +12,42 @@ Background: Missed and delayed cancer diagnoses are common, harmful,
 and often preventable. The Centers for Medicare and Medicaid Services
 have emphasized digital quality measures (dQMs) that evaluate
 longitudinal electronic health record data across multiple settings of
-care to address measurement gaps in quality. Therefore, dQMs of cancer
-diagnosis quality are necessary to identify gaps and guide
-interventions. We previously developed one for cancer emergency
-presentation. This is a unique measure because it focuses on diagnosis
-specifically. We developed and validated it in two health systems but
-aimed to demonstrate its usability and value in other large US data
-sources.
+care to address measurement gaps in quality. Therefore, dQMs will be
+needed specifically in the cancer diagnosis quality domain, to
+identify gaps and guide interventions. We have previously developed a
+dQM of the rate of emergency presentation (EP) of cancer. We developed
+and validated this measure in two US health systems; here we aimed to
+demonstrate its viability and utility in an independent large US data
+source.
 
-Methods: We implemented an dQM in Cosmos, a deidentified database
-covering x million individuals. The interface is point and click
-instead of SQL, which required using the original source document
-English language description, a previously published approach that has
-worked. We measured the crude measure nationwide in those with new
-lung cancer diagnosis in calendar year 2019. Emergency presentation
-was defined as ER visit followed by the new cancer diagnosis within 30
-days. We examined associations with social determinants of health both
-from survey and census ZIP code level data. We examined previous
-associations with demographic factors.
+Methods: We implemented the cancer EP in Cosmos, a deidentified
+database covering ________ million individuals. Emergency presentation was
+defined as ER visit followed by the new cancer diagnosis within 30
+days. The interface is point and click instead of SQL, which required
+using the original source document English language description, a
+previously published approach that has worked. We measured the rate of
+EP nationwide in those with new lung cancer diagnosis in calendar year
+2019. We examined previous associations with demographic factors. We
+examined associations with social determinants of health both from
+survey and census ZIP code level data.
 
 Results: At national scale, the dQM for lung EP was 19.5% (out of
 58,274 cancer diagnoses). This is similar to prior values (19% VA and
-18% Geisinger). Survey data showed an association of EP with
-transportation to medical appointments (43% vs. 28%). There was a
-stepwise association of more EP with each increasing category of
-social vulnerability (18% at lowest category vs. 22% at highest,
-p<0.001). Income showed a stepwise decrease in EP with increasing ZIP
-per capita income (p < 0.001). Demographics showed 19% EP in white
-patients and 24% in black (the two most common categories). Age < 69
-had higher EP (23%) compared to 78 and above (17%, p<0.001).
+18% Geisinger). Demographics showed 19% EP in white patients and 24%
+in black (the two most common categories). Age < 69 had higher EP
+(23%) compared to 78 and above (17%, p<0.001). There was a stepwise
+association of more EP with each increasing category of social
+vulnerability (18% at lowest category vs. 22% at highest, p<0.001).
+Income showed a stepwise decrease in EP with increasing ZIP per capita
+income (p < 0.001). Survey data showed an association of EP with
+transportation to medical appointments (43% vs. 28%).
 
-Conclusions: We successfully implemented an dQM using a different
+Conclusions: We successfully implemented a dQM using a different
 platform for US medical record data. We validated previous demographic
 associations shown in separate datasets. We showed associations with
 social determinants data that were not available elsewhere and can be
 further investigated. Limitations include the inability to
-conclusively re-validate this measure due to deidentified data and no
-access to text notes, although this could be done at any single
-institution that wanted to implement the measure.
+definitively re-validate the measure using this specific platform due
+to deidentified data and no access to text notes, although this could
+be done at any single institution that wanted to implement the
+measure.
